@@ -28,9 +28,6 @@ class PokemonListFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private val adapter = PokemonAdapter(listOf(), ::onClickedPokemon)
 
-
-    private val layoutManager = LinearLayoutManager(context)
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
