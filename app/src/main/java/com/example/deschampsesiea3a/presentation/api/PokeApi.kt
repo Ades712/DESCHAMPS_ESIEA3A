@@ -11,5 +11,5 @@ interface PokeApi {
     fun getPokemonList(@Query("limit")limit : String): Call<PokemonListResponse>
 
     @GET("pokemon/{id}")
-    fun getPokemonDetail(@Path ("id" )id : String) : Call<PokemonDetailResponse>
+    fun getPokemonDetail(@Path ("id" )id : Int) : Call<PokemonDetailResponse>
 }

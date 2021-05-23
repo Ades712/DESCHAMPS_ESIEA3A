@@ -20,6 +20,7 @@ class PokemonDetailFragment : Fragment() {
 
     private lateinit var textViewName: TextView
 
+
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
@@ -35,7 +36,8 @@ class PokemonDetailFragment : Fragment() {
         callApi()
         }
     private fun callApi(){
-        Singletons.pokeApi.getPokemonDetail("1").enqueue(object: Callback<PokemonDetailResponse>{
+        val id = arguments?.getInt("pokemonId") ?: -1
+        Singletons.pokeApi.getPokemonDetail(id).enqueue(object: Callback<PokemonDetailResponse>{
             override fun onFailure(call: Call<PokemonDetailResponse>, t: Throwable) {
             }
             override fun onResponse(
